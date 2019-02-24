@@ -1,8 +1,6 @@
 
-# react-native-hsv-color-picker 
+# react-native-hsv-color-picker
 
-> HSV stands for hue, saturation and value. For more details, please view [Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV)
-   
 ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)
 
 <p align="center">
@@ -10,7 +8,7 @@
 </p>
 
 ## Preview
-`react-native-hsv-color-picker` is a React Native component for building an [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV)  color picker. 
+`react-native-hsv-color-picker` is a React Native component for building an [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, value)  color picker. 
 
 Highlighted Features:
 1. **Real Rendering** - no image involved / all colors are truly rendered
