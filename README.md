@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
 
 ## Props
-### Basic Props
+#### Basic Props
 | Prop | Type | Default | Description |
 |--|--|--| -- |
 | `containerStyle` | ViewPropTypes.style  | `{}` |  style for the outmost container  |
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
 | `satValPickerSaturation` | number  | `1` | saturation value(`s` in `hsv`) for the saturation & value picker.<br>`Range [0, 1]`  |
 | `satValPickerValue` | number  | `1` | value(`v` in `hsv`) for the saturation & value picker.<br>`Range [0, 1]`  |
 
-### Callback Props
+#### Callback Props
 | Prop | Callback Params | Description |
 |--|--| -- |
 | `onHuePickerDragStart` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker starts to drag |
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
 | `onSatValPickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when another component has become the responder |
 
 ## Methods
-### Instance Methods
+#### Instance Methods
 > Use [`ref`](https://facebook.github.io/react/docs/refs-and-the-dom.html) to call instance methods
 
 | Method | Params | Return Type| Description |
