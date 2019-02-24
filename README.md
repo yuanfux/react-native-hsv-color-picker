@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 | `containerStyle` | ViewPropTypes.style  | `{}` |  style for the outmost container  |
 | `huePickerContainerStyle` | ViewPropTypes.style  | `{}` |  style for the hue picker container  |
 | `huePickerBorderRadius` | number  | `0` | border radius for the hue picker  |
-| `huePickerHue` | number  | `0` | hue value(`h` in `hsv`) for the hue picker.<br>`Range [0, 360]`  |
+| `huePickerHue` | number  | `0` | hue value(`h` in `hsv`) for the hue picker.<br>Ranged in `[0, 360]`.  |
 | `huePickerBarWidth` | number  | `12` | bar width for the hue picker  |
 | `huePickerBarHeight` | number  | `200` | bar height for the hue picker  |
 | `huePickerSliderSize` | number  | `24` | slider diameter for the hue picker |
@@ -99,9 +99,9 @@ const styles = StyleSheet.create({
 | `satValPickerBorderRadius` | number  | `0` | border radius for the saturation & value picker  |
 | `satValPickerSize` | number  | `200` | width / height for the saturation & value picker  |
 | `satValPickerSliderSize` | number  | `24` | slider diameter for the saturation & value picker  |
-| `satValPickerHue` | number  | `0` | hue value(`h` in `hsv`) for the saturation & value picker.<br>`Range [0, 360]`  |
-| `satValPickerSaturation` | number  | `1` | saturation value(`s` in `hsv`) for the saturation & value picker.<br>`Range [0, 1]`  |
-| `satValPickerValue` | number  | `1` | value(`v` in `hsv`) for the saturation & value picker.<br>`Range [0, 1]`  |
+| `satValPickerHue` | number  | `0` | hue value(`h` in `hsv`) for the saturation & value picker.<br>Ranged in `[0, 360]`.  |
+| `satValPickerSaturation` | number  | `1` | saturation value(`s` in `hsv`) for the saturation & value picker.<br>Ranged in `[0, 1]`.  |
+| `satValPickerValue` | number  | `1` | value(`v` in `hsv`) for the saturation & value picker.<br>Ranged in `[0, 1]`.  |
 
 #### Callback Props
 | Prop | Callback Params | Description |
