@@ -1,6 +1,8 @@
 
-# react-native-hsv-color-picker
+# react-native-hsv-color-picker 
 
+> HSV stands for hue, saturation and value. For more details, please view [Wikipedia](https://en.wikipedia.org/wiki/HSL_and_HSV)
+   
 ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)
 
 <p align="center">
