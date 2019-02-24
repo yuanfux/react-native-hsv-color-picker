@@ -15,7 +15,6 @@ export default class HsvColorPicker extends Component {
   }
 
   getCurrentColor() {
-    console.log('GET COLOR', this.satValPicker.current.getCurrentColor());
     return this.satValPicker.current.getCurrentColor();
   }
 
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 });
 

@@ -3,14 +3,220 @@
 exports[`<HsvColorPicker /> renders correctly 1`] = `
 <View
   style={
-    Object {
-      "alignItems": "center",
-      "justifyContent": "center",
-    }
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      },
+      Object {},
+    ]
   }
 >
-  <Text>
-    Hello World!
-  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        Object {},
+        Object {
+          "height": 224,
+          "width": 224,
+        },
+      ]
+    }
+  >
+    <BVLinearGradient
+      colors={
+        Array [
+          4294967295,
+          4294901760,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 1,
+          "y": 0.5,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0,
+          "y": 0.5,
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 0,
+        }
+      }
+    >
+      <BVLinearGradient
+        colors={
+          Array [
+            0,
+            4278190080,
+          ]
+        }
+        endPoint={
+          Object {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={null}
+        startPoint={
+          Object {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "height": 200,
+              "width": 200,
+            }
+          }
+        />
+      </BVLinearGradient>
+    </BVLinearGradient>
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Array [
+          Object {
+            "borderColor": "#fff",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+          },
+          Object {
+            "backgroundColor": "#ff0000",
+            "borderRadius": 12,
+            "borderWidth": 2.4,
+            "height": 24,
+            "transform": Array [
+              Object {
+                "translateX": 200,
+              },
+              Object {
+                "translateY": 0,
+              },
+            ],
+            "width": 24,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        Object {},
+        Object {
+          "paddingBottom": 12,
+          "paddingLeft": 6,
+          "paddingRight": 6,
+          "paddingTop": 12,
+        },
+      ]
+    }
+  >
+    <BVLinearGradient
+      colors={
+        Array [
+          4294901760,
+          4294967040,
+          4278255360,
+          4278255615,
+          4278190335,
+          4294902015,
+          4294901760,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Object {
+          "borderRadius": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 200,
+            "width": 12,
+          }
+        }
+      />
+    </BVLinearGradient>
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Array [
+          Object {
+            "borderColor": "#fff",
+            "position": "absolute",
+            "top": 0,
+          },
+          Object {
+            "backgroundColor": "#ff0000",
+            "borderRadius": 12,
+            "borderWidth": 2.4,
+            "height": 24,
+            "transform": Array [
+              Object {
+                "translateY": 0,
+              },
+            ],
+            "width": 24,
+          },
+        ]
+      }
+    />
+  </View>
 </View>
 `;

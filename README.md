@@ -14,10 +14,10 @@ Highlighted Features:
 4. **Fully Controlled** - no inner state involved
 
 ## Install
+> `react-native-hsv-color-picker` is powered by the native component [`react-native-linear-gradient`](https://github.com/react-native-community/react-native-linear-gradient). Besides following command, you have to follow this [Guide](https://github.com/react-native-community/react-native-linear-gradient#add-it-to-your-project) to add relevant dependencies to your project.
 ```bash
 $ npm install react-native-hsv-color-picker --save
 ```
-> `react-native-hsv-color-picker` is powered by the native component [`react-native-linear-gradient`](https://github.com/react-native-community/react-native-linear-gradient). Besides above command, you have to follow this [Guide](https://github.com/react-native-community/react-native-linear-gradient#add-it-to-your-project) to add relevant dependencies to your project.
 
 ## Usage
 > a minimally-configured HSV color picker
@@ -102,14 +102,14 @@ const styles = StyleSheet.create({
 ### Callback Props
 | Prop | Callback Params | Description |
 |--|--| -- |
-| `onHuePickerDragStart` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker starts to drag |
-| `onHuePickerDragMove` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker is dragging |
-| `onHuePickerDragEnd` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker stops dragging |
-| `onHuePickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when Another component has become the responder |
-| `onSatValPickerDragStart` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker starts to drag |
-| `onSatValPickerDragMove` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker is dragging |
-| `onSatValPickerDragEnd` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker stops dragging |
-| `onSatValPickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState: [gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when Another component has become the responder |
+| `onHuePickerDragStart` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker starts to drag |
+| `onHuePickerDragMove` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker is dragging |
+| `onHuePickerDragEnd` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker stops dragging |
+| `onHuePickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when another component has become the responder |
+| `onSatValPickerDragStart` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker starts to drag |
+| `onSatValPickerDragMove` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker is dragging |
+| `onSatValPickerDragEnd` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker stops dragging |
+| `onSatValPickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when another component has become the responder |
 
 ## Methods
 ### Instance Methods
