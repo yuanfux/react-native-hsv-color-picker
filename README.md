@@ -1,5 +1,8 @@
 
 # react-native-hsv-color-picker
+
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)
+
 <p align="center">
   <img width="300" src="https://user-images.githubusercontent.com/6414178/53297993-aef84480-3861-11e9-99ad-b957639414fa.gif">
 </p>
