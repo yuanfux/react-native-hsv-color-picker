@@ -2,7 +2,7 @@
 # react-native-hsv-color-picker
 > a react native HSV(hue, saturation, value) color picker
 
-![npm](https://img.shields.io/npm/v/react-native-hsv-color-picker.svg?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/yuanfux/react-native-hsv-color-picker.svg?style=flat-square)   ![NPM](https://img.shields.io/npm/l/react-native-hsv-color-picker.svg?style=flat-square) ![](https://img.shields.io/travis/yuanfux/react-native-hsv-color-picker/master.svg?style=flat-square) ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)
+![npm](https://img.shields.io/npm/v/react-native-hsv-color-picker.svg?style=flat-square) ![](https://img.shields.io/travis/yuanfux/react-native-hsv-color-picker/master.svg?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/yuanfux/react-native-hsv-color-picker.svg?style=flat-square) ![NPM](https://img.shields.io/npm/l/react-native-hsv-color-picker.svg?style=flat-square) ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square) ![](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)
 
 <p align="center">
   <img width="300" src="https://user-images.githubusercontent.com/6414178/53297993-aef84480-3861-11e9-99ad-b957639414fa.gif">
