@@ -12,3 +12,4 @@ Thumbs.db
 .idea/
 
 coverage/
+yarn-error.log

@@ -29,6 +29,7 @@ exports[`<HsvColorPicker /> renders correctly 1`] = `
     }
   >
     <BVLinearGradient
+      accessible={true}
       colors={
         Array [
           4294967295,
@@ -42,6 +43,12 @@ exports[`<HsvColorPicker /> renders correctly 1`] = `
         }
       }
       locations={null}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       startPoint={
         Object {
           "x": 0,
@@ -143,6 +150,7 @@ exports[`<HsvColorPicker /> renders correctly 1`] = `
     }
   >
     <BVLinearGradient
+      accessible={true}
       colors={
         Array [
           4294901760,
@@ -161,6 +169,12 @@ exports[`<HsvColorPicker /> renders correctly 1`] = `
         }
       }
       locations={null}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       startPoint={
         Object {
           "x": 0.5,

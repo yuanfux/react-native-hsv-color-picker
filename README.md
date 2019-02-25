@@ -30,7 +30,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import HsvColorPicker from 'react-native-hsv-color-picker';
 
-export default class Demo extends React.Component {
+export default class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,18 +38,18 @@ export default class Demo extends React.Component {
       sat: 0,
       val: 1,
     };
-    this.onSatValPickerDragMove = this.onSatValPickerDragMove.bind(this);
-    this.onHuePickerDragMove = this.onHuePickerDragMove.bind(this);
+    this.onSatValPickerChange = this.onSatValPickerChange.bind(this);
+    this.onHuePickerChange = this.onHuePickerChange.bind(this);
   }
 
-  onSatValPickerDragMove({ saturation, value }) {
+  onSatValPickerChange({ saturation, value }) {
     this.setState({
       sat: saturation,
       val: value,
     });
   }
 
-  onHuePickerDragMove({ hue }) {
+  onHuePickerChange({ hue }) {
     this.setState({
       hue,
     });
@@ -61,11 +61,13 @@ export default class Demo extends React.Component {
       <View style={styles.container}>
         <HsvColorPicker
           huePickerHue={hue}
-          onHuePickerDragMove={this.onHuePickerDragMove}
+          onHuePickerDragMove={this.onHuePickerChange}
+          onHuePickerPress={this.onHuePickerChange}
           satValPickerHue={hue}
           satValPickerSaturation={sat}
           satValPickerValue={val}
-          onSatValPickerDragMove={this.onSatValPickerDragMove}
+          onSatValPickerDragMove={this.onSatValPickerChange}
+          onSatValPickerPress={this.onSatValPickerChange}
         />
       </View>
     );
@@ -80,7 +82,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
 ```
 
 
@@ -110,10 +111,12 @@ const styles = StyleSheet.create({
 | `onHuePickerDragMove` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker is dragging |
 | `onHuePickerDragEnd` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker stops dragging |
 | `onHuePickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when another component has become the responder |
+| `onHuePickerPress` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;hue: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;nativeEvent:&nbsp;[nativeEvent](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when hue picker is pressed |
 | `onSatValPickerDragStart` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker starts to drag |
 | `onSatValPickerDragMove` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker is dragging |
 | `onSatValPickerDragEnd` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker stops dragging |
 | `onSatValPickerDragTerminate` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;gestureState:&nbsp;[gestureState](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when another component has become the responder |
+| `onSatValPickerPress` | {<br>&nbsp;&nbsp;&nbsp;&nbsp;saturation: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;value: number,<br>&nbsp;&nbsp;&nbsp;&nbsp;nativeEvent:&nbsp;[nativeEvent](https://facebook.github.io/react-native/docs/panresponder)<br>} | called when saturation & value picker is pressed |
 
 ## Methods
 #### Instance Methods

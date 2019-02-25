@@ -31,6 +31,7 @@ export default class HsvColorPicker extends Component {
       onHuePickerDragMove,
       onHuePickerDragEnd,
       onHuePickerDragTerminate,
+      onHuePickerPress,
       satValPickerContainerStyle,
       satValPickerBorderRadius,
       satValPickerSize,
@@ -42,6 +43,7 @@ export default class HsvColorPicker extends Component {
       onSatValPickerDragMove,
       onSatValPickerDragEnd,
       onSatValPickerDragTerminate,
+      onSatValPickerPress,
     } = this.props;
     return (
       <View style={[styles.container, containerStyle]}>
@@ -57,6 +59,7 @@ export default class HsvColorPicker extends Component {
           onDragMove={onSatValPickerDragMove}
           onDragEnd={onSatValPickerDragEnd}
           onDragTerminate={onSatValPickerDragTerminate}
+          onPress={onSatValPickerPress}
           ref={this.satValPicker}
         />
         <HuePicker
@@ -70,6 +73,7 @@ export default class HsvColorPicker extends Component {
           onDragMove={onHuePickerDragMove}
           onDragEnd={onHuePickerDragEnd}
           onDragTerminate={onHuePickerDragTerminate}
+          onPress={onHuePickerPress}
         />
       </View>
     );
@@ -96,6 +100,7 @@ HsvColorPicker.propTypes = {
   onHuePickerDragMove: PropTypes.func,
   onHuePickerDragEnd: PropTypes.func,
   onHuePickerDragTerminate: PropTypes.func,
+  onHuePickerPress: PropTypes.func,
   satValPickerContainerStyle: ViewPropTypes.style,
   satValPickerBorderRadius: PropTypes.number,
   satValPickerSize: PropTypes.number,
@@ -107,6 +112,7 @@ HsvColorPicker.propTypes = {
   onSatValPickerDragMove: PropTypes.func,
   onSatValPickerDragEnd: PropTypes.func,
   onSatValPickerDragTerminate: PropTypes.func,
+  onSatValPickerPress: PropTypes.func,
 };
 
 HsvColorPicker.defaultProps = {
@@ -121,6 +127,7 @@ HsvColorPicker.defaultProps = {
   onHuePickerDragMove: null,
   onHuePickerDragEnd: null,
   onHuePickerDragTerminate: null,
+  onHuePickerPress: null,
   satValPickerContainerStyle: {},
   satValPickerBorderRadius: 0,
   satValPickerSize: 200,
@@ -132,4 +139,5 @@ HsvColorPicker.defaultProps = {
   onSatValPickerDragMove: null,
   onSatValPickerDragEnd: null,
   onSatValPickerDragTerminate: null,
+  onSatValPickerPress: null,
 };

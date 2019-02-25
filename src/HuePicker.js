@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   View,
+  TouchableWithoutFeedback,
   ViewPropTypes,
   PanResponder,
   StyleSheet,
@@ -22,6 +23,7 @@ export default class HuePicker extends Component {
       '#ff00ff',
       '#ff0000',
     ];
+    this.firePressEvent = this.firePressEvent.bind(this);
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -30,17 +32,17 @@ export default class HuePicker extends Component {
       onPanResponderGrant: (evt, gestureState) => {
         const { hue } = this.props;
         this.dragStartValue = hue;
-        this.fireEvent('onDragStart', gestureState);
+        this.fireDragEvent('onDragStart', gestureState);
       },
       onPanResponderMove: (evt, gestureState) => {
-        this.fireEvent('onDragMove', gestureState);
+        this.fireDragEvent('onDragMove', gestureState);
       },
       onPanResponderTerminationRequest: () => true,
       onPanResponderRelease: (evt, gestureState) => {
-        this.fireEvent('onDragEnd', gestureState);
+        this.fireDragEvent('onDragEnd', gestureState);
       },
       onPanResponderTerminate: (evt, gestureState) => {
-        this.fireEvent('onDragTerminate', gestureState);
+        this.fireDragEvent('onDragTerminate', gestureState);
       },
       onShouldBlockNativeResponder: () => true,
     });
@@ -67,7 +69,7 @@ export default class HuePicker extends Component {
     return chroma.hsl(hue, 1, 0.5).hex();
   }
 
-  computeHueValue(gestureState) {
+  computeHueValueDrag(gestureState) {
     const { dy } = gestureState;
     const { barHeight } = this.props;
     const { dragStartValue } = this;
@@ -76,12 +78,30 @@ export default class HuePicker extends Component {
     return updatedHue;
   }
 
-  fireEvent(eventName, gestureState) {
+  computeHueValuePress(event) {
+    const { nativeEvent } = event;
+    const { locationY } = nativeEvent;
+    const { barHeight } = this.props;
+    const updatedHue = normalizeValue(locationY / barHeight) * 360;
+    return updatedHue;
+  }
+
+  fireDragEvent(eventName, gestureState) {
     const { [eventName]: event } = this.props;
     if (event) {
       event({
-        hue: this.computeHueValue(gestureState),
+        hue: this.computeHueValueDrag(gestureState),
         gestureState,
+      });
+    }
+  }
+
+  firePressEvent(event) {
+    const { onPress } = this.props;
+    if (onPress) {
+      onPress({
+        hue: this.computeHueValuePress(event),
+        nativeEvent: event.nativeEvent,
       });
     }
   }
@@ -97,7 +117,7 @@ export default class HuePicker extends Component {
     } = this.props;
     return (
       <View style={this.getContainerStyle()}>
-        {
+        <TouchableWithoutFeedback onPress={this.firePressEvent}>
           <LinearGradient
             colors={hueColors}
             style={{
@@ -109,7 +129,7 @@ export default class HuePicker extends Component {
             }}
             />
           </LinearGradient>
-        }
+        </TouchableWithoutFeedback>
         <View
           {...this.panResponder.panHandlers}
           style={[
@@ -154,6 +174,7 @@ HuePicker.propTypes = {
   onDragMove: PropTypes.func,
   onDragEnd: PropTypes.func,
   onDragTerminate: PropTypes.func,
+  onPress: PropTypes.func,
 };
 
 HuePicker.defaultProps = {
@@ -167,4 +188,5 @@ HuePicker.defaultProps = {
   onDragMove: null,
   onDragEnd: null,
   onDragTerminate: null,
+  onPress: null,
 };

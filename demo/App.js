@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import HsvColorPicker from '../src';
 
 export default class App extends React.Component {
@@ -11,19 +10,19 @@ export default class App extends React.Component {
       sat: 0,
       val: 1,
     };
-    this.onSatValPickerDragMove = this.onSatValPickerDragMove.bind(this);
-    this.onHuePickerDragMove = this.onHuePickerDragMove.bind(this);
+    this.onSatValPickerChange = this.onSatValPickerChange.bind(this);
+    this.onHuePickerChange = this.onHuePickerChange.bind(this);
     this.hsvColorPicker = React.createRef();
   }
 
-  onSatValPickerDragMove({ saturation, value }) {
+  onSatValPickerChange({ saturation, value }) {
     this.setState({
       sat: saturation,
       val: value,
     });
   }
 
-  onHuePickerDragMove({ hue }) {
+  onHuePickerChange({ hue }) {
     this.setState({
       hue,
     });
@@ -32,25 +31,17 @@ export default class App extends React.Component {
   render() {
     const { hue, sat, val } = this.state;
     return (
-      <View>
-        <LinearGradient
-          colors={['#c3cfe2', '#f5f7fa']}
-          style={{height: '100%', width: '100%'}}
-        >
-        <View style={styles.container}>
-          <HsvColorPicker
-            huePickerContainerStyle={{marginLeft: 20}}
-            huePickerBorderRadius={10}
-            huePickerHue={hue}
-            onHuePickerDragMove={this.onHuePickerDragMove}
-            satValPickerBorderRadius={10}
-            satValPickerHue={hue}
-            satValPickerSaturation={sat}
-            satValPickerValue={val}
-            onSatValPickerDragMove={this.onSatValPickerDragMove}
-          />
-        </View>
-        </LinearGradient>
+      <View style={styles.container}>
+        <HsvColorPicker
+          huePickerHue={hue}
+          onHuePickerDragMove={this.onHuePickerChange}
+          onHuePickerPress={this.onHuePickerChange}
+          satValPickerHue={hue}
+          satValPickerSaturation={sat}
+          satValPickerValue={val}
+          onSatValPickerDragMove={this.onSatValPickerChange}
+          onSatValPickerPress={this.onSatValPickerChange}
+        />
       </View>
     );
   }
@@ -59,7 +50,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#000000',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

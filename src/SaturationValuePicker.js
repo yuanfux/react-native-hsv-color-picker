@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   View,
+  TouchableWithoutFeedback,
   ViewPropTypes,
   PanResponder,
   StyleSheet,
@@ -13,6 +14,7 @@ import normalizeValue from './utils';
 export default class SaturationValuePicker extends Component {
   constructor(props) {
     super(props);
+    this.firePressEvent = this.firePressEvent.bind(this);
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -24,17 +26,17 @@ export default class SaturationValuePicker extends Component {
           saturation,
           value,
         };
-        this.fireEvent('onDragStart', gestureState);
+        this.fireDragEvent('onDragStart', gestureState);
       },
       onPanResponderMove: (evt, gestureState) => {
-        this.fireEvent('onDragMove', gestureState);
+        this.fireDragEvent('onDragMove', gestureState);
       },
       onPanResponderTerminationRequest: () => true,
       onPanResponderRelease: (evt, gestureState) => {
-        this.fireEvent('onDragEnd', gestureState);
+        this.fireDragEvent('onDragEnd', gestureState);
       },
       onPanResponderTerminate: (evt, gestureState) => {
-        this.fireEvent('onDragTerminate', gestureState);
+        this.fireDragEvent('onDragTerminate', gestureState);
       },
       onShouldBlockNativeResponder: () => true,
     });
@@ -49,7 +51,7 @@ export default class SaturationValuePicker extends Component {
     ).hex();
   }
 
-  computeSatVal(gestureState) {
+  computeSatValDrag(gestureState) {
     const { dx, dy } = gestureState;
     const { size } = this.props;
     const { saturation, value } = this.dragStartValue;
@@ -61,12 +63,32 @@ export default class SaturationValuePicker extends Component {
     };
   }
 
-  fireEvent(eventName, gestureState) {
+  computeSatValPress(event) {
+    const { nativeEvent } = event;
+    const { locationX, locationY } = nativeEvent;
+    const { size } = this.props;
+    return {
+      saturation: normalizeValue(locationX / size),
+      value: 1 - normalizeValue(locationY / size),
+    };
+  }
+
+  fireDragEvent(eventName, gestureState) {
     const { [eventName]: event } = this.props;
     if (event) {
       event({
-        ...this.computeSatVal(gestureState),
+        ...this.computeSatValDrag(gestureState),
         gestureState,
+      });
+    }
+  }
+
+  firePressEvent(event) {
+    const { onPress } = this.props;
+    if (onPress) {
+      onPress({
+        ...this.computeSatValPress(event),
+        nativeEvent: event.nativeEvent,
       });
     }
   }
@@ -92,31 +114,33 @@ export default class SaturationValuePicker extends Component {
           },
         ]}
       >
-        <LinearGradient
-          style={{
-            borderRadius,
-          }}
-          colors={[
-            '#fff',
-            chroma.hsl(hue, 1, 0.5).hex(),
-          ]}
-          start={{ x: 0, y: 0.5 }}
-          end={{ x: 1, y: 0.5 }}
-        >
+        <TouchableWithoutFeedback onPress={this.firePressEvent}>
           <LinearGradient
+            style={{
+              borderRadius,
+            }}
             colors={[
-              'rgba(0, 0, 0, 0)',
-              '#000',
+              '#fff',
+              chroma.hsl(hue, 1, 0.5).hex(),
             ]}
+            start={{ x: 0, y: 0.5 }}
+            end={{ x: 1, y: 0.5 }}
           >
-            <View
-              style={{
-                height: size,
-                width: size,
-              }}
-            />
+            <LinearGradient
+              colors={[
+                'rgba(0, 0, 0, 0)',
+                '#000',
+              ]}
+            >
+              <View
+                style={{
+                  height: size,
+                  width: size,
+                }}
+              />
+            </LinearGradient>
           </LinearGradient>
-        </LinearGradient>
+        </TouchableWithoutFeedback>
         <View
           {...this.panResponder.panHandlers}
           style={[
@@ -164,6 +188,7 @@ SaturationValuePicker.propTypes = {
   onDragMove: PropTypes.func,
   onDragEnd: PropTypes.func,
   onDragTerminate: PropTypes.func,
+  onPress: PropTypes.func,
 };
 
 SaturationValuePicker.defaultProps = {
@@ -178,4 +203,5 @@ SaturationValuePicker.defaultProps = {
   onDragMove: null,
   onDragEnd: null,
   onDragTerminate: null,
+  onPress: null,
 };
