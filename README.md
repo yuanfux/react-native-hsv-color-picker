@@ -9,18 +9,26 @@
 </p>
 
 ## Preview
+
 `react-native-hsv-color-picker` is a React Native component for building an [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, value)  color picker. 
 
 Highlighted Features:
 1. **Real Rendering** - no image involved / all colors are truly rendered
 2. **Performance** - empowered by native gradient lib
-3. **Configurable** - fully configurable
+3. **Fully Supported** - support both React Native & Expo projects
 4. **Fully Controlled** - no inner state involved
 
+[**View Live Demo on Expo Snack**](https://snack.expo.io/@fuyuanx/github.com-yuanfux-expo-hsv-color-picker:demo)
+
 ## Install
+### Use with React Native
 > `react-native-hsv-color-picker` is powered by the native component [`react-native-linear-gradient`](https://github.com/react-native-community/react-native-linear-gradient). Besides following command, you have to follow this [Guide](https://github.com/react-native-community/react-native-linear-gradient#add-it-to-your-project) to add relevant dependencies to your project.
 ```bash
 $ npm install react-native-hsv-color-picker --save
+```
+### Use with Expo
+```bash
+$ npm install expo-hsv-color-picker --save
 ```
 
 ## Usage
