@@ -26,8 +26,6 @@
   "dependencies": {
     "chroma-js": "^2.0.3",
     "prop-types": "^15.6.0",
-    "react": "^16.5.0",
-    "react-native": "^0.57.1",
     "react-native-linear-gradient": "^2.5.3"
   },
   "devDependencies": {
@@ -43,7 +41,9 @@
     "eslint-plugin-react-native": "^3.6.0",
     "jest": "^24.0.0",
     "metro-react-native-babel-preset": "^0.51.1",
-    "react-test-renderer": "^16.7.0"
+    "react-test-renderer": "^16.7.0",
+    "react-native": "0.57.1",
+    "react": "16.5.0",
   },
   "scripts": {
     "test:lint": "eslint \"src/*.js\"",
