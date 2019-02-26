@@ -26,5 +26,7 @@ module.exports = {
         'react-native/split-platform-components': 2,
         'react-native/no-inline-styles': 2,
         'react-native/no-raw-text': 2,
+        // allow devDependencies
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
     }
 }
