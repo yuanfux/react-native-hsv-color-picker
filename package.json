@@ -1,6 +1,6 @@
 {
   "name": "react-native-hsv-color-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a react native HSV(hue, saturation, value) color picker",
   "author": "Yuan Fu",
   "bugs": {
