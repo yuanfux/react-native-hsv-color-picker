@@ -13,11 +13,11 @@ module.exports = {
       'react-native',
       'react',
       'prop-types',
-      'chroma-js',
     ],
     extraNodeModules: {
       '@babel/runtime': path.resolve(__dirname, 'node_modules/@babel/runtime'),
       'react-native-linear-gradient': path.resolve(__dirname, 'node_modules/expo/build/effects/LinearGradient'),
+      'chroma-js': path.resolve(__dirname, 'node_modules/chroma-js'),
     },
   },
   projectRoot: path.resolve(__dirname),
