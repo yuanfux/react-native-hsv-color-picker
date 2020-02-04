@@ -1,0 +1,752 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HsvColorPicker /> renders correctly 1`] = `
+<HsvColorPicker
+  containerStyle={Object {}}
+  huePickerBarHeight={200}
+  huePickerBarWidth={12}
+  huePickerBorderRadius={0}
+  huePickerContainerStyle={Object {}}
+  huePickerHue={0}
+  huePickerSliderSize={24}
+  onHuePickerDragEnd={null}
+  onHuePickerDragMove={null}
+  onHuePickerDragStart={null}
+  onHuePickerDragTerminate={null}
+  onHuePickerPress={null}
+  onSatValPickerDragEnd={null}
+  onSatValPickerDragMove={null}
+  onSatValPickerDragStart={null}
+  onSatValPickerDragTerminate={null}
+  onSatValPickerPress={null}
+  satValPickerBorderRadius={0}
+  satValPickerContainerStyle={Object {}}
+  satValPickerHue={0}
+  satValPickerSaturation={1}
+  satValPickerSize={200}
+  satValPickerSliderSize={24}
+  satValPickerValue={1}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+        Object {},
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {},
+        ]
+      }
+    >
+      <SaturationValuePicker
+        borderRadius={0}
+        containerStyle={Object {}}
+        hue={0}
+        onDragEnd={null}
+        onDragMove={null}
+        onDragStart={null}
+        onDragTerminate={null}
+        onPress={null}
+        saturation={1}
+        size={200}
+        sliderSize={24}
+        value={1}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              Object {},
+              Object {
+                "height": 224,
+                "width": 224,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                Object {},
+                Object {
+                  "height": 224,
+                  "width": 224,
+                },
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <LinearGradient
+                accessible={true}
+                colors={
+                  Array [
+                    "#fff",
+                    "#ff0000",
+                  ]
+                }
+                end={
+                  Array [
+                    1,
+                    0.5,
+                  ]
+                }
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                start={
+                  Array [
+                    0,
+                    0.5,
+                  ]
+                }
+                style={
+                  Object {
+                    "borderRadius": 0,
+                  }
+                }
+              >
+                <NativeLinearGradient
+                  accessible={true}
+                  colors={
+                    Array [
+                      4294967295,
+                      4294901760,
+                    ]
+                  }
+                  endPoint={
+                    Array [
+                      1,
+                      0.5,
+                    ]
+                  }
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  startPoint={
+                    Array [
+                      0,
+                      0.5,
+                    ]
+                  }
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                    }
+                  }
+                >
+                  <ForwardRef(Adapter<ExpoLinearGradient>)
+                    accessible={true}
+                    colors={
+                      Array [
+                        4294967295,
+                        4294901760,
+                      ]
+                    }
+                    endPoint={
+                      Array [
+                        1,
+                        0.5,
+                      ]
+                    }
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    startPoint={
+                      Array [
+                        0,
+                        0.5,
+                      ]
+                    }
+                    style={
+                      Object {
+                        "borderRadius": 0,
+                      }
+                    }
+                  >
+                    <ViewManagerAdapter_ExpoLinearGradient
+                      accessible={true}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      proxiedProperties={
+                        Object {
+                          "colors": Array [
+                            4294967295,
+                            4294901760,
+                          ],
+                          "endPoint": Array [
+                            1,
+                            0.5,
+                          ],
+                          "focusable": true,
+                          "locations": undefined,
+                          "onClick": [Function],
+                          "startPoint": Array [
+                            0,
+                            0.5,
+                          ],
+                        }
+                      }
+                      style={
+                        Object {
+                          "borderRadius": 0,
+                        }
+                      }
+                    >
+                      <ViewManagerAdapter_ExpoLinearGradient
+                        accessible={true}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        proxiedProperties={
+                          Object {
+                            "colors": Array [
+                              4294967295,
+                              4294901760,
+                            ],
+                            "endPoint": Array [
+                              1,
+                              0.5,
+                            ],
+                            "focusable": true,
+                            "locations": undefined,
+                            "onClick": [Function],
+                            "startPoint": Array [
+                              0,
+                              0.5,
+                            ],
+                          }
+                        }
+                        style={
+                          Object {
+                            "borderRadius": 0,
+                          }
+                        }
+                      >
+                        <LinearGradient
+                          colors={
+                            Array [
+                              "rgba(0, 0, 0, 0)",
+                              "#000",
+                            ]
+                          }
+                        >
+                          <NativeLinearGradient
+                            colors={
+                              Array [
+                                0,
+                                4278190080,
+                              ]
+                            }
+                          >
+                            <ForwardRef(Adapter<ExpoLinearGradient>)
+                              colors={
+                                Array [
+                                  0,
+                                  4278190080,
+                                ]
+                              }
+                            >
+                              <ViewManagerAdapter_ExpoLinearGradient
+                                proxiedProperties={
+                                  Object {
+                                    "colors": Array [
+                                      0,
+                                      4278190080,
+                                    ],
+                                    "endPoint": undefined,
+                                    "locations": undefined,
+                                    "startPoint": undefined,
+                                  }
+                                }
+                              >
+                                <ViewManagerAdapter_ExpoLinearGradient
+                                  proxiedProperties={
+                                    Object {
+                                      "colors": Array [
+                                        0,
+                                        4278190080,
+                                      ],
+                                      "endPoint": undefined,
+                                      "locations": undefined,
+                                      "startPoint": undefined,
+                                    }
+                                  }
+                                >
+                                  <View
+                                    style={
+                                      Object {
+                                        "height": 200,
+                                        "width": 200,
+                                      }
+                                    }
+                                  >
+                                    <View
+                                      style={
+                                        Object {
+                                          "height": 200,
+                                          "width": 200,
+                                        }
+                                      }
+                                    />
+                                  </View>
+                                </ViewManagerAdapter_ExpoLinearGradient>
+                              </ViewManagerAdapter_ExpoLinearGradient>
+                            </ForwardRef(Adapter<ExpoLinearGradient>)>
+                          </NativeLinearGradient>
+                        </LinearGradient>
+                      </ViewManagerAdapter_ExpoLinearGradient>
+                    </ViewManagerAdapter_ExpoLinearGradient>
+                  </ForwardRef(Adapter<ExpoLinearGradient>)>
+                </NativeLinearGradient>
+              </LinearGradient>
+            </TouchableWithoutFeedback>
+            <View
+              onMoveShouldSetResponder={[Function]}
+              onMoveShouldSetResponderCapture={[Function]}
+              onResponderEnd={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderReject={[Function]}
+              onResponderRelease={[Function]}
+              onResponderStart={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onStartShouldSetResponderCapture={[Function]}
+              style={
+                Array [
+                  Object {
+                    "borderColor": "#fff",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                  },
+                  Object {
+                    "backgroundColor": "#ff0000",
+                    "borderRadius": 12,
+                    "borderWidth": 2.4,
+                    "height": 24,
+                    "transform": Array [
+                      Object {
+                        "translateX": 200,
+                      },
+                      Object {
+                        "translateY": 0,
+                      },
+                    ],
+                    "width": 24,
+                  },
+                ]
+              }
+            >
+              <View
+                onMoveShouldSetResponder={[Function]}
+                onMoveShouldSetResponderCapture={[Function]}
+                onResponderEnd={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderReject={[Function]}
+                onResponderRelease={[Function]}
+                onResponderStart={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                onStartShouldSetResponderCapture={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#fff",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                    },
+                    Object {
+                      "backgroundColor": "#ff0000",
+                      "borderRadius": 12,
+                      "borderWidth": 2.4,
+                      "height": 24,
+                      "transform": Array [
+                        Object {
+                          "translateX": 200,
+                        },
+                        Object {
+                          "translateY": 0,
+                        },
+                      ],
+                      "width": 24,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </SaturationValuePicker>
+      <HuePicker
+        barHeight={200}
+        barWidth={12}
+        borderRadius={0}
+        containerStyle={Object {}}
+        hue={0}
+        onDragEnd={null}
+        onDragMove={null}
+        onDragStart={null}
+        onDragTerminate={null}
+        onPress={null}
+        sliderSize={24}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              Object {},
+              Object {
+                "paddingBottom": 12,
+                "paddingLeft": 6,
+                "paddingRight": 6,
+                "paddingTop": 12,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                },
+                Object {},
+                Object {
+                  "paddingBottom": 12,
+                  "paddingLeft": 6,
+                  "paddingRight": 6,
+                  "paddingTop": 12,
+                },
+              ]
+            }
+          >
+            <TouchableWithoutFeedback
+              onPress={[Function]}
+            >
+              <LinearGradient
+                accessible={true}
+                colors={
+                  Array [
+                    "#ff0000",
+                    "#ffff00",
+                    "#00ff00",
+                    "#00ffff",
+                    "#0000ff",
+                    "#ff00ff",
+                    "#ff0000",
+                  ]
+                }
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "borderRadius": 0,
+                  }
+                }
+              >
+                <NativeLinearGradient
+                  accessible={true}
+                  colors={
+                    Array [
+                      4294901760,
+                      4294967040,
+                      4278255360,
+                      4278255615,
+                      4278190335,
+                      4294902015,
+                      4294901760,
+                    ]
+                  }
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "borderRadius": 0,
+                    }
+                  }
+                >
+                  <ForwardRef(Adapter<ExpoLinearGradient>)
+                    accessible={true}
+                    colors={
+                      Array [
+                        4294901760,
+                        4294967040,
+                        4278255360,
+                        4278255615,
+                        4278190335,
+                        4294902015,
+                        4294901760,
+                      ]
+                    }
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "borderRadius": 0,
+                      }
+                    }
+                  >
+                    <ViewManagerAdapter_ExpoLinearGradient
+                      accessible={true}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      proxiedProperties={
+                        Object {
+                          "colors": Array [
+                            4294901760,
+                            4294967040,
+                            4278255360,
+                            4278255615,
+                            4278190335,
+                            4294902015,
+                            4294901760,
+                          ],
+                          "endPoint": undefined,
+                          "focusable": true,
+                          "locations": undefined,
+                          "onClick": [Function],
+                          "startPoint": undefined,
+                        }
+                      }
+                      style={
+                        Object {
+                          "borderRadius": 0,
+                        }
+                      }
+                    >
+                      <ViewManagerAdapter_ExpoLinearGradient
+                        accessible={true}
+                        onResponderGrant={[Function]}
+                        onResponderMove={[Function]}
+                        onResponderRelease={[Function]}
+                        onResponderTerminate={[Function]}
+                        onResponderTerminationRequest={[Function]}
+                        onStartShouldSetResponder={[Function]}
+                        proxiedProperties={
+                          Object {
+                            "colors": Array [
+                              4294901760,
+                              4294967040,
+                              4278255360,
+                              4278255615,
+                              4278190335,
+                              4294902015,
+                              4294901760,
+                            ],
+                            "endPoint": undefined,
+                            "focusable": true,
+                            "locations": undefined,
+                            "onClick": [Function],
+                            "startPoint": undefined,
+                          }
+                        }
+                        style={
+                          Object {
+                            "borderRadius": 0,
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "height": 200,
+                              "width": 12,
+                            }
+                          }
+                        >
+                          <View
+                            style={
+                              Object {
+                                "height": 200,
+                                "width": 12,
+                              }
+                            }
+                          />
+                        </View>
+                      </ViewManagerAdapter_ExpoLinearGradient>
+                    </ViewManagerAdapter_ExpoLinearGradient>
+                  </ForwardRef(Adapter<ExpoLinearGradient>)>
+                </NativeLinearGradient>
+              </LinearGradient>
+            </TouchableWithoutFeedback>
+            <AnimatedComponent
+              onMoveShouldSetResponder={[Function]}
+              onMoveShouldSetResponderCapture={[Function]}
+              onResponderEnd={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderReject={[Function]}
+              onResponderRelease={[Function]}
+              onResponderStart={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              onStartShouldSetResponderCapture={[Function]}
+              style={
+                Array [
+                  Object {
+                    "borderColor": "#fff",
+                    "position": "absolute",
+                    "top": 0,
+                  },
+                  Object {
+                    "backgroundColor": "#ff0000",
+                    "borderRadius": 12,
+                    "borderWidth": 2.4,
+                    "height": 24,
+                    "transform": Array [
+                      Object {
+                        "translateY": 0,
+                      },
+                    ],
+                    "width": 24,
+                  },
+                ]
+              }
+            >
+              <View
+                onMoveShouldSetResponder={[Function]}
+                onMoveShouldSetResponderCapture={[Function]}
+                onResponderEnd={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderReject={[Function]}
+                onResponderRelease={[Function]}
+                onResponderStart={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                onStartShouldSetResponderCapture={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#ff0000",
+                    "borderColor": "#fff",
+                    "borderRadius": 12,
+                    "borderWidth": 2.4,
+                    "height": 24,
+                    "position": "absolute",
+                    "top": 0,
+                    "transform": Array [
+                      Object {
+                        "translateY": 0,
+                      },
+                    ],
+                    "width": 24,
+                  }
+                }
+              >
+                <View
+                  onMoveShouldSetResponder={[Function]}
+                  onMoveShouldSetResponderCapture={[Function]}
+                  onResponderEnd={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderReject={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderStart={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  onStartShouldSetResponderCapture={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#ff0000",
+                      "borderColor": "#fff",
+                      "borderRadius": 12,
+                      "borderWidth": 2.4,
+                      "height": 24,
+                      "position": "absolute",
+                      "top": 0,
+                      "transform": Array [
+                        Object {
+                          "translateY": 0,
+                        },
+                      ],
+                      "width": 24,
+                    }
+                  }
+                />
+              </View>
+            </AnimatedComponent>
+          </View>
+        </View>
+      </HuePicker>
+    </View>
+  </View>
+</HsvColorPicker>
+`;

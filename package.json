@@ -50,6 +50,7 @@
     "expo-keep-awake": "^8.0.0",
     "jest": "^24.0.0",
     "jest-enzyme": "^7.0.2",
+    "jest-expo": "^36.0.1",
     "jsdom": "^15.1.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
@@ -62,7 +63,7 @@
     "test": "npm run test:lint && npx jest"
   },
   "jest": {
-    "preset": "react-native",
+    "preset": "jest-expo",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
