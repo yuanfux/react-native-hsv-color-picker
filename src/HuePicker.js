@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {
+  Animated,
   View,
   TouchableWithoutFeedback,
   ViewPropTypes,
   PanResponder,
   StyleSheet,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import PropTypes from 'prop-types';
 import chroma from 'chroma-js';
 import normalizeValue from './utils';
@@ -24,6 +25,7 @@ export default class HuePicker extends Component {
       '#ff0000',
     ];
     this.firePressEvent = this.firePressEvent.bind(this);
+    this.sliderY = new Animated.Value(props.barHeight * props.hue / 360);
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -46,6 +48,16 @@ export default class HuePicker extends Component {
       },
       onShouldBlockNativeResponder: () => true,
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    const { hue, barHeight } = this.props;
+    if (
+      prevProps.hue !== hue
+      || prevProps.barHeight !== barHeight
+    ) {
+      this.sliderY.setValue(barHeight * hue / 360);
+    }
   }
 
   getContainerStyle() {
@@ -112,7 +124,6 @@ export default class HuePicker extends Component {
       sliderSize,
       barWidth,
       barHeight,
-      hue,
       borderRadius,
     } = this.props;
     return (
@@ -130,7 +141,7 @@ export default class HuePicker extends Component {
             />
           </LinearGradient>
         </TouchableWithoutFeedback>
-        <View
+        <Animated.View
           {...this.panResponder.panHandlers}
           style={[
             styles.slider,
@@ -141,7 +152,7 @@ export default class HuePicker extends Component {
               borderWidth: sliderSize / 10,
               backgroundColor: this.getCurrentColor(),
               transform: [{
-                translateY: barHeight * hue / 360,
+                translateY: this.sliderY,
               }],
             },
           ]}

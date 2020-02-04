@@ -10,26 +10,24 @@
 
 ## Preview
 
-`react-native-hsv-color-picker` is a React Native component for building an [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, value)  color picker. 
+`react-native-hsv-color-picker` is a React Native component for building an [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, value) color picker. 
 
 Highlighted Features:
 1. **Real Rendering** - no image involved / all colors are truly rendered
 2. **Performance** - empowered by native gradient lib
-3. **Fully Supported** - support both React Native & Expo projects
 4. **Fully Controlled** - no inner state involved
-
-[**View Live Demo on Expo Snack**](https://snack.expo.io/@fuyuanx/github.com-yuanfux-expo-hsv-color-picker:demo)
+3. **Fully Supported** - support both React Native & Expo projects
 
 ## Install
-### Use with React Native
-> `react-native-hsv-color-picker` is powered by the native component [`react-native-linear-gradient`](https://github.com/react-native-community/react-native-linear-gradient). Besides following command, you have to follow this [Guide](https://github.com/react-native-community/react-native-linear-gradient#add-it-to-your-project) to add relevant dependencies to your project.
 ```bash
 $ npm install react-native-hsv-color-picker --save
 ```
-### Use with Expo
-```bash
-$ npm install expo-hsv-color-picker --save
-```
+
+### Use with Expo Project
+> You are all set.
+
+### Use with React Native Project
+> `react-native-hsv-color-picker` is powered by the lib [`expo-linear-gradient`](https://github.com/react-native-community/react-native-linear-gradient). Besides above command, you have to follow this [Instruction](https://github.com/expo/expo/tree/master/packages/expo-linear-gradient#installation-in-bare-react-native-projects) to add relevant dependencies to your project.
 
 ## Usage
 > a minimally-configured HSV color picker
@@ -137,30 +135,28 @@ const styles = StyleSheet.create({
 
 
 ## Dev
-> The `demo` folder contains a standalone Expo project, which can also be used for dev purpose.
+> The `demo` folder contains a standalone Expo project, which can be used for dev purpose.
 
-> react-native - 0.57.1 <br />
-> react - 16.5.0
+> react-native - 0.61 <br />
+> react - 16.9
 
 1. Start Expo
 	```bash
-	$ cd demo
+	$ npm install
 
-	$ yarn
-
-	$ yarn start
+	$ npm start
 	```
 
-2. Run in the `simulator`
+2. Run on `simulator`
 	- type the following command in the `Terminal` after the project is booted up
 	- `a` for `android` simulator
 	- `i` for `iOS` simulator
 
-3. Run in the real `device`
+3. Run on `device`
 	- require the installation of corresponding [`iOS client`](https://itunes.apple.com/app/apple-store/id982107779) or [`android client`](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www) on the device
 	- scan the QR code from `Terminal` using the device
 
-4. More [`Expo Guide`](https://docs.expo.io/versions/v32.0.0/)
+4. More on [`Expo Guide`](https://docs.expo.io/versions/v36.0.0/)
 
 ## Related
 - scaffolded by [**react-native-component-cli**](https://github.com/yuanfux/react-native-component-cli) 

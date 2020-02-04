@@ -1,6 +1,6 @@
 {
   "name": "react-native-hsv-color-picker",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "a react native HSV(hue, saturation, value) color picker",
   "author": "Yuan Fu",
   "bugs": {
@@ -24,33 +24,51 @@
     "src/*"
   ],
   "dependencies": {
-    "chroma-js": "^2.0.3",
-    "prop-types": "^15.6.0",
-    "react-native-linear-gradient": "^2.5.3"
+    "chroma-js": "^2.1.0",
+    "expo-linear-gradient": "^8.0.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/runtime": "^7.3.1",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.0.0",
+    "babel-preset-expo": "~8.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "escape-regex-string": "^1.0.6",
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-native": "^3.6.0",
+    "expo": "~36.0.0",
+    "expo-keep-awake": "^8.0.0",
     "jest": "^24.0.0",
-    "metro-react-native-babel-preset": "^0.51.1",
-    "react-test-renderer": "^16.7.0",
-    "react-native": "0.57.1",
-    "react": "16.5.0"
+    "jest-enzyme": "^7.0.2",
+    "jsdom": "^15.1.1",
+    "react": "~16.9.0",
+    "react-dom": "~16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.1.tar.gz"
   },
   "scripts": {
-    "test:lint": "eslint \"src/*.js\"",
-    "test": "npm run test:lint && jest"
+    "start": "npx expo-cli start --config \"./demo/app.json\" -c",
+    "eject": "npx expo-cli eject --config \"./demo/app.json\"",
+    "test:lint": "npx eslint \"src/*.js\"",
+    "test": "npm run test:lint && npx jest"
   },
   "jest": {
     "preset": "react-native",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setup-tests.js"
+    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/demo/"
     ],

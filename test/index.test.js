@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import HsvColorPicker from '../src';
 
 describe('<HsvColorPicker />', () => {
   test('renders correctly', () => {
-    const tree = renderer.create(<HsvColorPicker />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const wrapper = mount(<HsvColorPicker />);
+    expect(wrapper).toMatchSnapshot();
   });
 });

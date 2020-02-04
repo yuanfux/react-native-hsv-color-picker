@@ -1,15 +1,19 @@
-# Node
-npm-debug.log
+# npm
+npm-debug.*
+yarn-error.log
 node_modules
 
-# Mac
+# mac
 .DS_Store
 
-# Windows
+# windows
 Thumbs.db
 
-# WebStorm
+# webstorm
 .idea/
 
+# jest
 coverage/
-yarn-error.log
+
+# expo
+.expo/*
