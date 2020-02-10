@@ -9,6 +9,7 @@
 </p>
 
 ## Preview
+[View Live Demo](https://snack.expo.io/@fuyuanx/react-native-hsv-color-picker)
 
 `react-native-hsv-color-picker` is a React Native component for building an [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (hue, saturation, value) color picker. 
 
