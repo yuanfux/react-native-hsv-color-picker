@@ -23,7 +23,7 @@ export default class HuePicker extends Component {
       '#ff0000',
     ];
     this.firePressEvent = this.firePressEvent.bind(this);
-    this.sliderY = new Animated.Value(props.barHeight * props.hue / 360);
+    this.sliderX = new Animated.Value(props.barHeight * props.hue / 360);
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onStartShouldSetPanResponderCapture: () => true,
@@ -49,19 +49,19 @@ export default class HuePicker extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { hue = 0, barHeight = 200 } = this.props;
+    const { hue = 0, barWidth = 200 } = this.props;
     if (
       prevProps.hue !== hue
-      || prevProps.barHeight !== barHeight
+      || prevProps.barWidth !== barWidth
     ) {
-      this.sliderY.setValue(barHeight * hue / 360);
+      this.sliderX.setValue(barWidth * hue / 360);
     }
   }
 
   getContainerStyle() {
-    const { sliderSize = 24, barWidth = 12, containerStyle = {} } = this.props;
-    const paddingTop = sliderSize / 2;
-    const paddingLeft = sliderSize - barWidth > 0 ? (sliderSize - barWidth) / 2 : 0;
+    const { sliderSize = 24, barHeight = 12, containerStyle = {} } = this.props;
+    const paddingLeft = sliderSize / 2;
+    const paddingTop = sliderSize - barHeight > 0 ? (sliderSize - barHeight) / 2 : 0;
     return [
       styles.container,
       containerStyle,
@@ -80,19 +80,19 @@ export default class HuePicker extends Component {
   }
 
   computeHueValueDrag(gestureState) {
-    const { dy } = gestureState;
-    const { barHeight = 200 } = this.props;
+    const { dx } = gestureState;
+    const { barWidth = 200 } = this.props;
     const { dragStartValue } = this;
-    const diff = dy / barHeight;
+    const diff = dx / barWidth;
     const updatedHue = normalizeValue(dragStartValue / 360 + diff) * 360;
     return updatedHue;
   }
 
   computeHueValuePress(event) {
     const { nativeEvent } = event;
-    const { locationY } = nativeEvent;
-    const { barHeight = 200 } = this.props;
-    const updatedHue = normalizeValue(locationY / barHeight) * 360;
+    const { locationX } = nativeEvent;
+    const { barWidth = 200 } = this.props;
+    const updatedHue = normalizeValue(locationX / barWidth) * 360;
     return updatedHue;
   }
 
@@ -120,8 +120,8 @@ export default class HuePicker extends Component {
     const { hueColors } = this;
     const {
       sliderSize = 24,
-      barWidth = 12,
-      barHeight = 200,
+      barWidth = 200,
+      barHeight = 12,
       borderRadius = 0,
     } = this.props;
     return (
@@ -132,6 +132,8 @@ export default class HuePicker extends Component {
             style={{
               borderRadius,
             }}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
           >
             <View style={{
               width: barWidth, height: barHeight,
@@ -148,9 +150,8 @@ export default class HuePicker extends Component {
               height: sliderSize,
               borderRadius: sliderSize / 2,
               borderWidth: sliderSize / 10,
-              backgroundColor: this.getCurrentColor(),
               transform: [{
-                translateY: this.sliderY,
+                translateX: this.sliderX,
               }],
             },
           ]}
@@ -166,8 +167,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   slider: {
-    top: 0,
+    left: 0,
     position: 'absolute',
+    backgroundColor: '#fff',
     borderColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.43,
+    shadowRadius: 10,
+    elevation: 5,
   },
 });

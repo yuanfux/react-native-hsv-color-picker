@@ -22,8 +22,8 @@ export default class HsvColorPicker extends Component {
       huePickerContainerStyle = {},
       huePickerBorderRadius = 0,
       huePickerHue = 0,
-      huePickerBarWidth = 12,
-      huePickerBarHeight = 200,
+      huePickerBarWidth = 200,
+      huePickerBarHeight = 12,
       huePickerSliderSize = 24,
       onHuePickerDragStart,
       onHuePickerDragMove,
@@ -80,7 +80,6 @@ export default class HsvColorPicker extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
