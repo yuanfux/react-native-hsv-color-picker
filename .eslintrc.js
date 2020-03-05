@@ -12,6 +12,7 @@ module.exports = {
       'react-native/react-native': true
     },
     rules: {
+      'react/prop-types': 0,
       // allow js file extension
       'react/jsx-filename-extension': [
         'error',

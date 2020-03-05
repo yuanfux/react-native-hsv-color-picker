@@ -3,13 +3,11 @@ import {
   Animated,
   View,
   TouchableWithoutFeedback,
-  ViewPropTypes,
   PanResponder,
   StyleSheet,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import PropTypes from 'prop-types';
-import chroma from 'chroma-js';
+import LinearGradient from 'react-native-linear-gradient';
+import tinycolor from 'tinycolor2';
 import normalizeValue from './utils';
 
 export default class HuePicker extends Component {
@@ -32,7 +30,7 @@ export default class HuePicker extends Component {
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
       onPanResponderGrant: (evt, gestureState) => {
-        const { hue } = this.props;
+        const { hue = 0 } = this.props;
         this.dragStartValue = hue;
         this.fireDragEvent('onDragStart', gestureState);
       },
@@ -51,7 +49,7 @@ export default class HuePicker extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { hue, barHeight } = this.props;
+    const { hue = 0, barHeight = 200 } = this.props;
     if (
       prevProps.hue !== hue
       || prevProps.barHeight !== barHeight
@@ -61,7 +59,7 @@ export default class HuePicker extends Component {
   }
 
   getContainerStyle() {
-    const { sliderSize, barWidth, containerStyle } = this.props;
+    const { sliderSize = 24, barWidth = 12, containerStyle = {} } = this.props;
     const paddingTop = sliderSize / 2;
     const paddingLeft = sliderSize - barWidth > 0 ? (sliderSize - barWidth) / 2 : 0;
     return [
@@ -77,13 +75,13 @@ export default class HuePicker extends Component {
   }
 
   getCurrentColor() {
-    const { hue } = this.props;
-    return chroma.hsl(hue, 1, 0.5).hex();
+    const { hue = 0 } = this.props;
+    return tinycolor(`hue ${hue} 1.0 0.5`).toHexString();
   }
 
   computeHueValueDrag(gestureState) {
     const { dy } = gestureState;
-    const { barHeight } = this.props;
+    const { barHeight = 200 } = this.props;
     const { dragStartValue } = this;
     const diff = dy / barHeight;
     const updatedHue = normalizeValue(dragStartValue / 360 + diff) * 360;
@@ -93,7 +91,7 @@ export default class HuePicker extends Component {
   computeHueValuePress(event) {
     const { nativeEvent } = event;
     const { locationY } = nativeEvent;
-    const { barHeight } = this.props;
+    const { barHeight = 200 } = this.props;
     const updatedHue = normalizeValue(locationY / barHeight) * 360;
     return updatedHue;
   }
@@ -121,10 +119,10 @@ export default class HuePicker extends Component {
   render() {
     const { hueColors } = this;
     const {
-      sliderSize,
-      barWidth,
-      barHeight,
-      borderRadius,
+      sliderSize = 24,
+      barWidth = 12,
+      barHeight = 200,
+      borderRadius = 0,
     } = this.props;
     return (
       <View style={this.getContainerStyle()}>
@@ -173,31 +171,3 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
   },
 });
-
-HuePicker.propTypes = {
-  containerStyle: ViewPropTypes.style,
-  borderRadius: PropTypes.number,
-  hue: PropTypes.number,
-  barWidth: PropTypes.number,
-  barHeight: PropTypes.number,
-  sliderSize: PropTypes.number,
-  onDragStart: PropTypes.func,
-  onDragMove: PropTypes.func,
-  onDragEnd: PropTypes.func,
-  onDragTerminate: PropTypes.func,
-  onPress: PropTypes.func,
-};
-
-HuePicker.defaultProps = {
-  containerStyle: {},
-  borderRadius: 0,
-  hue: 0,
-  barWidth: 12,
-  barHeight: 200,
-  sliderSize: 24,
-  onDragStart: null,
-  onDragMove: null,
-  onDragEnd: null,
-  onDragTerminate: null,
-  onPress: null,
-};
