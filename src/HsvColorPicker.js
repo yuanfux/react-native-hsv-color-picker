@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 import HuePicker from './HuePicker';
 import SaturationValuePicker from './SaturationValuePicker';
@@ -17,12 +18,13 @@ export default class HsvColorPicker extends Component {
   }
 
   render() {
+    const maxWidth = Dimensions.get('window').width - 32;
     const {
       containerStyle = {},
       huePickerContainerStyle = {},
       huePickerBorderRadius = 0,
       huePickerHue = 0,
-      huePickerBarWidth = 200,
+      huePickerBarWidth = maxWidth,
       huePickerBarHeight = 12,
       huePickerSliderSize = 24,
       onHuePickerDragStart,
@@ -32,7 +34,7 @@ export default class HsvColorPicker extends Component {
       onHuePickerPress,
       satValPickerContainerStyle = {},
       satValPickerBorderRadius = 0,
-      satValPickerSize = 200,
+      satValPickerSize = { width: maxWidth, height: 200 },
       satValPickerSliderSize = 24,
       satValPickerHue = 0,
       satValPickerSaturation = 1,

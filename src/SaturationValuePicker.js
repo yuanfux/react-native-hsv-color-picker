@@ -47,10 +47,10 @@ export default class SaturationValuePicker extends Component {
 
   computeSatValDrag(gestureState) {
     const { dx, dy } = gestureState;
-    const { size = 200 } = this.props;
+    const { size } = this.props;
     const { saturation, value } = this.dragStartValue;
-    const diffx = dx / size;
-    const diffy = dy / size;
+    const diffx = dx / size.width;
+    const diffy = dy / size.height;
     return {
       saturation: normalizeValue(saturation + diffx),
       value: normalizeValue(value - diffy),
@@ -60,10 +60,10 @@ export default class SaturationValuePicker extends Component {
   computeSatValPress(event) {
     const { nativeEvent } = event;
     const { locationX, locationY } = nativeEvent;
-    const { size = 200 } = this.props;
+    const { size } = this.props;
     return {
-      saturation: normalizeValue(locationX / size),
-      value: 1 - normalizeValue(locationY / size),
+      saturation: normalizeValue(locationX / size.width),
+      value: 1 - normalizeValue(locationY / size.height),
     };
   }
 
@@ -89,7 +89,7 @@ export default class SaturationValuePicker extends Component {
 
   render() {
     const {
-      size = 200,
+      size,
       sliderSize = 24,
       hue = 0,
       value = 1,
@@ -103,8 +103,8 @@ export default class SaturationValuePicker extends Component {
           styles.container,
           containerStyle,
           {
-            height: size + sliderSize,
-            width: size + sliderSize,
+            height: size.height + sliderSize,
+            width: size.width + sliderSize,
           },
         ]}
       >
@@ -128,8 +128,8 @@ export default class SaturationValuePicker extends Component {
             >
               <View
                 style={{
-                  height: size,
-                  width: size,
+                  height: size.height,
+                  width: size.width,
                 }}
               />
             </LinearGradient>
@@ -146,8 +146,8 @@ export default class SaturationValuePicker extends Component {
               borderWidth: sliderSize / 10,
               backgroundColor: this.getCurrentColor(),
               transform: [
-                { translateX: size * saturation },
-                { translateY: size * (1 - value) },
+                { translateX: size.width * saturation },
+                { translateY: size.height * (1 - value) },
               ],
             },
           ]}
