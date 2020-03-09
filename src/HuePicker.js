@@ -49,12 +49,13 @@ export default class HuePicker extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { hue = 0, barWidth = 200 } = this.props;
+    const { hue = 0, barWidth = 200, sliderSize = 24 } = this.props;
+    const borderWidth = sliderSize / 10;
     if (
       prevProps.hue !== hue
       || prevProps.barWidth !== barWidth
     ) {
-      this.sliderX.setValue(barWidth * hue / 360);
+      this.sliderX.setValue((barWidth - sliderSize + borderWidth) * hue / 360);
     }
   }
 
@@ -124,6 +125,7 @@ export default class HuePicker extends Component {
       barHeight = 12,
       borderRadius = 0,
     } = this.props;
+    const borderWidth = sliderSize / 10;
     return (
       <View style={this.getContainerStyle()}>
         <TouchableWithoutFeedback onPress={this.firePressEvent}>
@@ -148,8 +150,9 @@ export default class HuePicker extends Component {
             {
               width: sliderSize,
               height: sliderSize,
+              left: (sliderSize - borderWidth / 2) / 2,
               borderRadius: sliderSize / 2,
-              borderWidth: sliderSize / 10,
+              borderWidth,
               transform: [{
                 translateX: this.sliderX,
               }],
@@ -167,7 +170,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   slider: {
-    left: 0,
     position: 'absolute',
     backgroundColor: '#fff',
     borderColor: '#fff',
