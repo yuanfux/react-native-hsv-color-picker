@@ -150,7 +150,7 @@ export default class HuePicker extends Component {
             {
               width: sliderSize,
               height: sliderSize,
-              left: (sliderSize - borderWidth / 2) / 2,
+              left: (sliderSize - borderWidth) / 2,
               borderRadius: sliderSize / 2,
               borderWidth,
               transform: [{
