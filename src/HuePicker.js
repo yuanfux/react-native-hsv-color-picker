@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Animated,
   View,
-  TouchableWithoutFeedback,
   PanResponder,
   StyleSheet,
 } from 'react-native';
@@ -22,7 +21,6 @@ export default class HuePicker extends Component {
       '#ff00ff',
       '#ff0000',
     ];
-    this.firePressEvent = this.firePressEvent.bind(this);
     this.sliderX = new Animated.Value(props.barHeight * props.hue / 360);
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -30,8 +28,16 @@ export default class HuePicker extends Component {
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
       onPanResponderGrant: (evt, gestureState) => {
-        const { hue = 0 } = this.props;
-        this.dragStartValue = hue;
+        const { onPress } = this.props;
+        this.dragStartValue = this.computeHueValuePress(evt);
+
+        if (onPress) {
+          onPress({
+            hue: this.computeHueValuePress(evt),
+            nativeEvent: evt.nativeEvent,
+          });
+        }
+
         this.fireDragEvent('onDragStart', gestureState);
       },
       onPanResponderMove: (evt, gestureState) => {
@@ -127,24 +133,25 @@ export default class HuePicker extends Component {
     } = this.props;
     const borderWidth = sliderSize / 10;
     return (
-      <View style={this.getContainerStyle()}>
-        <TouchableWithoutFeedback onPress={this.firePressEvent}>
-          <LinearGradient
-            colors={hueColors}
-            style={{
-              borderRadius,
-            }}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 0 }}
-          >
-            <View style={{
-              width: barWidth, height: barHeight,
-            }}
-            />
-          </LinearGradient>
-        </TouchableWithoutFeedback>
+      <View
+        style={this.getContainerStyle()}
+        {...this.panResponder.panHandlers}
+      >
+        <LinearGradient
+          colors={hueColors}
+          style={{
+            borderRadius,
+          }}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+        >
+          <View style={{
+            width: barWidth, height: barHeight,
+          }}
+          />
+        </LinearGradient>
         <Animated.View
-          {...this.panResponder.panHandlers}
+          pointerEvents="none"
           style={[
             styles.slider,
             {
