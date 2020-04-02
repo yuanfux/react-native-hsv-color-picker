@@ -109,9 +109,9 @@ export default class SaturationValuePicker extends Component {
         {...this.panResponder.panHandlers}
       >
         <LinearGradient
-          style={{
+          style={[styles.gradientContainer, {
             borderRadius,
-          }}
+          }]}
           colors={[
             '#fff',
             tinycolor(`hsl ${hue} 1 0.5`).toHexString(),
@@ -142,6 +142,7 @@ export default class SaturationValuePicker extends Component {
               height: sliderSize,
               borderRadius: sliderSize / 2,
               borderWidth: sliderSize / 10,
+              backgroundColor: this.getCurrentColor(),
               transform: [
                 { translateX: size.width * saturation },
                 { translateY: size.height * (1 - value) },
@@ -158,6 +159,9 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  gradientContainer: {
+    overflow: 'hidden',
   },
   slider: {
     top: 0,
