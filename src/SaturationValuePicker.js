@@ -142,7 +142,6 @@ export default class SaturationValuePicker extends Component {
               height: sliderSize,
               borderRadius: sliderSize / 2,
               borderWidth: sliderSize / 10,
-              backgroundColor: this.getCurrentColor(),
               transform: [
                 { translateX: size.width * saturation },
                 { translateY: size.height * (1 - value) },

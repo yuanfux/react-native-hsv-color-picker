@@ -136,6 +136,9 @@ export default class HuePicker extends Component {
       <View
         style={this.getContainerStyle()}
         {...this.panResponder.panHandlers}
+        hitSlop={{
+          top: 10, bottom: 10, left: 0, right: 0,
+        }}
       >
         <LinearGradient
           colors={hueColors}
@@ -159,7 +162,6 @@ export default class HuePicker extends Component {
               height: sliderSize,
               left: (sliderSize - borderWidth) / 2,
               borderRadius: sliderSize / 2,
-              borderWidth,
               transform: [{
                 translateX: this.sliderX,
               }],
@@ -179,7 +181,6 @@ const styles = StyleSheet.create({
   slider: {
     position: 'absolute',
     backgroundColor: '#fff',
-    borderColor: '#fff',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
