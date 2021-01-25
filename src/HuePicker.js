@@ -44,7 +44,7 @@ export default class HuePicker extends Component {
       },
       onPanResponderTerminationRequest: () => true,
       onPanResponderRelease: (evt, gestureState) => {
-        this.firePressEvent(evt);
+        this.fireReleaseEvent(evt);
         this.fireDragEvent('onDragEnd', gestureState);
       },
       onPanResponderTerminate: (evt, gestureState) => {
@@ -112,7 +112,7 @@ export default class HuePicker extends Component {
     }
   }
 
-  firePressEvent = (event) => {
+  fireReleaseEvent = (event) => {
     const { onPress } = this.props;
     if (onPress) {
       onPress({
@@ -132,20 +132,18 @@ export default class HuePicker extends Component {
     } = this.props;
     return (
       <View style={this.getContainerStyle()}>
-        <TouchableWithoutFeedback>
-          <LinearGradient
-            colors={hueColors}
-            style={{
-              borderRadius,
-            }}
-          >
-            <View style={{
-              width: barWidth, height: barHeight,
-            }}
-            {...this.panResponder.panHandlers}
-            />
-          </LinearGradient>
-        </TouchableWithoutFeedback>
+        <LinearGradient
+          colors={hueColors}
+          style={{
+            borderRadius,
+          }}
+        >
+          <View style={{
+            width: barWidth, height: barHeight,
+          }}
+          {...this.panResponder.panHandlers}
+          />
+        </LinearGradient>
         <Animated.View
           pointerEvents="none"
           style={[

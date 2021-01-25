@@ -33,7 +33,7 @@ export default class SaturationValuePicker extends Component {
       },
       onPanResponderTerminationRequest: () => true,
       onPanResponderRelease: (evt, gestureState) => {
-        this.firePressEvent(evt);
+        this.fireReleaseEvent(evt);
         this.fireDragEvent('onDragEnd', gestureState);
       },
       onPanResponderTerminate: (evt, gestureState) => {
@@ -115,34 +115,32 @@ export default class SaturationValuePicker extends Component {
           },
         ]}
       >
-        <TouchableWithoutFeedback>
+        <LinearGradient
+          style={{
+            borderRadius,
+          }}
+          colors={[
+            '#fff',
+            chroma.hsl(hue, 1, 0.5).hex(),
+          ]}
+          start={[0, 0.5]}
+          end={[1, 0.5]}
+        >
           <LinearGradient
-            style={{
-              borderRadius,
-            }}
             colors={[
-              '#fff',
-              chroma.hsl(hue, 1, 0.5).hex(),
+              'rgba(0, 0, 0, 0)',
+              '#000',
             ]}
-            start={[0, 0.5]}
-            end={[1, 0.5]}
           >
-            <LinearGradient
-              colors={[
-                'rgba(0, 0, 0, 0)',
-                '#000',
-              ]}
-            >
-              <View
-                style={{
-                  height: size,
-                  width: size,
-                }}
-                {...this.panResponder.panHandlers}
-              />
-            </LinearGradient>
+            <View
+              style={{
+                height: size,
+                width: size,
+              }}
+              {...this.panResponder.panHandlers}
+            />
           </LinearGradient>
-        </TouchableWithoutFeedback>
+        </LinearGradient>
         <View
            pointerEvents="none"
           style={[
