@@ -131,7 +131,7 @@ export default class HuePicker extends Component {
       borderRadius,
     } = this.props;
     return (
-      <View style={this.getContainerStyle()}>
+      <View style={this.getContainerStyle()} {...this.panResponder.panHandlers}>
         <LinearGradient
           colors={hueColors}
           style={{
@@ -141,7 +141,6 @@ export default class HuePicker extends Component {
           <View style={{
             width: barWidth, height: barHeight,
           }}
-          {...this.panResponder.panHandlers}
           />
         </LinearGradient>
         <Animated.View

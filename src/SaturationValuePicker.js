@@ -114,6 +114,7 @@ export default class SaturationValuePicker extends Component {
             width: size + sliderSize,
           },
         ]}
+        {...this.panResponder.panHandlers}
       >
         <LinearGradient
           style={{
@@ -137,7 +138,6 @@ export default class SaturationValuePicker extends Component {
                 height: size,
                 width: size,
               }}
-              {...this.panResponder.panHandlers}
             />
           </LinearGradient>
         </LinearGradient>
