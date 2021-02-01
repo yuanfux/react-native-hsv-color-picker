@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   View,
-  TouchableWithoutFeedback,
   ViewPropTypes,
   PanResponder,
   StyleSheet,

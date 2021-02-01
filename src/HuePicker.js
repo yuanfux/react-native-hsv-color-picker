@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Animated,
   View,
-  TouchableWithoutFeedback,
   ViewPropTypes,
   PanResponder,
   StyleSheet,
