@@ -116,9 +116,7 @@ export default class SaturationValuePicker extends Component {
       >
         <TouchableWithoutFeedback onPress={this.firePressEvent}>
           <LinearGradient
-            style={{
-              borderRadius,
-            }}
+            style={[{ borderRadius }, styles.linearGradient]}
             colors={[
               '#fff',
               chroma.hsl(hue, 1, 0.5).hex(),
@@ -173,6 +171,9 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
     borderColor: '#fff',
+  },
+  linearGradient: {
+    overflow: 'hidden',
   },
 });
 
