@@ -24,7 +24,7 @@
     "src/*"
   ],
   "dependencies": {
-    "react-native-linear-gradient": "git+https://github.com/wordpress-mobile/react-native-linear-gradient.git#cc381fa1f0e52dce1cb0bbf2b5143cf821dedd99",
+    "react-native-linear-gradient": "git+https://github.com/wordpress-mobile/react-native-linear-gradient.git#2369d070a31d35b911a77db53a55e57f98cc010b",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
